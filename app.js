@@ -1,7 +1,7 @@
 const qwerty = document.querySelector('#qwerty');
 const phrase = document.querySelector('#phrase');
 const overlay = document.querySelector('#overlay');
-const startButton = document.querySelector('.btn__reset');
+const enter = document.querySelector('.btn__reset');
 const phraseUL = document.querySelector('#phrase ul');
 const keyboard = document.querySelector('#qwerty');
 const heartList = document.querySelector('#scoreboard ol');
@@ -16,8 +16,8 @@ let phrases =
     'rank and file','moaning minnie',
     'loose lips sink ships','give no quarter'];
 
-startButton.addEventListener('click', () => {
-	if (startButton.textContent === 'Enter the Western Front') {
+enter.addEventListener('click', () => {
+	if (enter.textContent === 'Enter the Western Front') {
 		startGame();
 		overlay.style.display = 'none';
 	} else {
@@ -94,16 +94,18 @@ function checkWin() {
 		removeShowClass();
 		overlay.className = 'win';
 		overlay.style.display = 'flex';
-		startButton.textContent = 'Play Again';
-		overlay.appendChild(h3);
+    overlay.appendChild(h3);
+    overlay.appendChild(enter);
+		enter.textContent = 'Play Again';
 		h3.textContent = 'You Advanced by Bounds!';
 		showCorrectPhrase();
 	} else if (missed >= 5) {
 		removeShowClass();
 		overlay.className = 'lose';
 		overlay.style.display = 'flex';
-		startButton.textContent = 'Try Again';
 		overlay.appendChild(h3);
+		overlay.appendChild(enter);
+		enter.textContent = 'Try Again';
 		h3.textContent = 'You Died In Battle!';
 		showCorrectPhrase();
 	}
