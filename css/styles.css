@@ -14,6 +14,7 @@
   --color-wrong-pick: rgba(165, 0, 0, 0.719);
   --font-size-large: 60px;
   --font-size-medium: 20px;
+  --font-size-small: 0px;
   --transition: all .2s ease-in-out;
 }
 
@@ -71,7 +72,9 @@ button {
 }
 
 button:hover {
-  background: rgba(107, 0, 0, 0.8)
+  background: rgba(107, 0, 0, 0.8);
+  transform: scale(1.1);
+  transition-duration: 0ms;
 }
 
 .main-container {
@@ -115,26 +118,30 @@ button:hover {
 
 .show {
   color: #000;
-  background-color: rgba(118, 206, 130, 0.800);
+  background-color: rgba(118, 206, 130, 0.808);
   font-family: 'Special Elite', cursive;
   font-weight: bold;
   text-transform: uppercase;
-  transition: .8s cubic-bezier(.6, 1.5, .6, 1);
-  transform: rotate(360deg);
+  transition: .5s cubic-bezier(.6, 1.5, .6, 1);
+  transform: scale3d(0.5);
 }
 
 /* Keyboard */
 
-.keyrow {
+.keyboard {
   display: flex;
   justify-content: center;
 }
 
 .chosen {
   background: var(--color-neutral);
-  border-radius: 5px;
-  font-size: var(--font-size-medium);
-  color: #FFFFFF;
+  border-radius: 0px;
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0);
+}
+
+.chosen:hover {
+  background: rgba(255, 255, 255, 0);
 }
 
 .wrong {
@@ -155,7 +162,9 @@ button:hover {
 }
 
 .btn__reset:hover {
-  background: rgba(107, 0, 0, 0.8)
+  background: rgba(107, 0, 0, 0.8);
+  transform: scale(1.1);
+  transition-duration: 200ms;
 }
 
 /* Overlay */
