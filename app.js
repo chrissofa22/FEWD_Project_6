@@ -8,8 +8,7 @@ const heartList = document.querySelector('#scoreboard ol');
 const heartArray = document.querySelectorAll('.tries img');
 const heart = document.querySelector('.tries img');
 
-let missed = 0;
-let phrases =
+let missed = 0;let phrases =
   ['all present and correct','hoist with your own petard',
     'lions led by donkeys','kilroy was here',
     'fifth column','steal a march',
@@ -21,8 +20,7 @@ enter.addEventListener('click', () => {
 		startGame();
 		overlay.style.display = 'none';
 	} else {
-		resetGame();
-		startGame();
+    resetGame();startGame();
 		overlay.style.display = 'none';
 	}
 });
@@ -43,8 +41,7 @@ function addPhraseToDisplay(arr) {
 		if (li.textContent.match(letters)) {
 			li.className = 'letter';
 		} else {
-			li.className = '';
-			li.style.margin = '1em';
+			li.className = '';li.style.margin = '1em';
 		}
 	}
 }
@@ -56,7 +53,6 @@ keyboard.addEventListener('click', (e) => {
 		button.setAttribute('disabled', '');
 		const letter = button.textContent;
 		const letterFound = checkLetter(letter);
-
 		if (letterFound === null) {
 			heartArray[missed].src = 'images/lostHeart.png';
 			button.className = 'wrong';
@@ -70,7 +66,6 @@ function checkLetter(letter) {
 	const letters = document.querySelectorAll('.letter');
 	let matchingLetter;
 	let matchCounter = 0;
-
 	for (let i = 0; i < letters.length; i++) {
 		if (letter === letters[i].textContent) {
 			letters[i].className += ' show';
@@ -89,7 +84,6 @@ function checkWin() {
 	const totalLetters = document.querySelectorAll('.letter');
 	const shownLetters = document.querySelectorAll('.show');
 	const h3 = document.createElement('h3');
-
 	if (shownLetters.length === totalLetters.length) {
 		removeShowClass();
 		overlay.className = 'win';
@@ -124,18 +118,14 @@ function startGame() {
 
 function resetGame() {
 	missed = 0;
-
 	while (phraseUL.firstChild) {
 		phraseUL.removeChild(phraseUL.firstChild);
 	}
-
 	const h3 = document.querySelector('h3');
 	h3.parentNode.removeChild(h3);
-
 	for (let i = 0; i < heartArray.length; i++) {
 		heartArray[i].src = 'images/liveHeart.png';
 	}
-
 	const keyboardButton = document.querySelectorAll('#qwerty button');
 	for (let i = 0; i < keyboardButton.length; i++) {
 		keyboardButton[i].classList.remove('chosen');
