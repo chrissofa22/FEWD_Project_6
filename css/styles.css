@@ -1,0 +1,198 @@
+/* Main styles */
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet');
+
+/* Variables */
+
+:root {
+  --color-win: rgba(0, 83, 10, 0.95);
+  --color-lose: rgba(119, 0, 0, 0.95);
+  --color-start: #000000;
+  --color-neutral: #ffffff00;
+  --color-neutral-light: rgb(0, 0, 0);
+  --color-keys: rgb(255, 255, 255);
+  --color-keys-light: rgb(0, 0, 0);
+  --color-wrong-pick: rgba(165, 0, 0, 0.719);
+  --font-size-large: 60px;
+  --font-size-medium: 20px;
+  --transition: all .2s ease-in-out;
+}
+
+/* main */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+li, ol, ul {
+  padding: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'Special Elite', cursive;
+  font-size: var(--font-size-large);
+}
+
+h3 {
+  margin: 0;
+  font-family: 'Special Elite', cursive;
+  font-size: 30px;
+}
+
+button {
+  margin: 6px;
+  border: 1px solid transparent;
+  padding: .5rem 1rem;
+  color: var(--color-keys);
+  font-family: 'Special Elite', cursive;
+  font-size: var(--font-size-large);
+  background-color: var(--color-keys-light);
+  border-radius: 5px;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
+}
+
+button:hover {
+  background: rgba(107, 0, 0, 0.8)
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  max-height: 900px;
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Title */
+
+.header {
+  color: var(--color-start);
+}
+
+/* Phrase */
+
+.letter {
+  font-family: 'Special Elite', cursive;
+  font-size: var(--font-size-large);
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  margin-bottom: 1em;
+  color: transparent;
+  background: var(--color-neutral-light);
+  border-radius: 5px;
+}
+
+.space {
+  width: 15px;
+}
+
+.show {
+  color: #000;
+  background-color: rgba(118, 206, 130, 0.800);
+  font-family: 'Special Elite', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .8s cubic-bezier(.6, 1.5, .6, 1);
+  transform: rotate(360deg);
+}
+
+/* Keyboard */
+
+.keyrow {
+  display: flex;
+  justify-content: center;
+}
+
+.chosen {
+  background: var(--color-neutral);
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  color: #FFFFFF;
+}
+
+.wrong {
+  background: var(--color-wrong-pick);
+}
+
+.btn__reset {
+  padding: 8px;
+  margin: 50px auto;
+  background: #FFFFFF;
+  border-radius: 5px;
+  font-family: 'Special Elite', cursive;
+  font-size: var(--font-size-large);
+  color: var(--color-start);
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.25), 0 18px 50px 0 rgba(0,0,0,0.20);
+}
+
+.btn__reset:hover {
+  background: rgba(107, 0, 0, 0.8)
+}
+
+/* Overlay */
+
+#overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+.title {
+  color: #FFF;
+}
+
+.start {
+  background-color: var(--color-start);
+}
+
+.win {
+  background-color: var(--color-win);
+}
+
+.win a {
+  color: var(--color-win);
+}
+
+.lose {
+  background-color: var(--color-lose);
+}
+
+.lose a {
+  color: var(--color-lose);
+}
